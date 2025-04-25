@@ -50,12 +50,25 @@ document.addEventListener("DOMContentLoaded", async function () {
 
         input.addEventListener("change", () => {
             if (input.files.length > 0) {
-                displayImage(input.files[0]);
+                displayImage(input.files[0], true);
             }
         });
     });
 
-    function displayImage(blob) {
+    function displayImage(blob, shouldReset = false) {
+
+        if (shouldReset) {
+            // Sadece manuel yüklemede temizle
+            points = [];
+            storedData = [];
+            selectedTypeId = 0;
+            typeCounter = 0;
+            dragState = { dragging: false, pointIndex: null, typeId: null, roiIndex: null };
+
+            pointsContainer.innerHTML = "";
+            document.querySelectorAll(".type-container").forEach(el => el.remove());
+        }
+
         const reader = new FileReader();
         reader.onload = function (event) {
             const image = new Image();
@@ -90,7 +103,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
             image.src = event.target.result;
 
-            showROIPolygonsForType(selectedTypeId);
+            //showROIPolygonsForType(selectedTypeId);
         };
         reader.readAsDataURL(blob);
     }
