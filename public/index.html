@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawing ROI Tool</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <div class="upload-box" id="uploadBox">
+                <p>Photo Here</p>
+                <img id="uploadedImage" src="" alt="">
+                <div id="pointsContainer"></div>
+            </div>
+            <div class="button-container">
+                <button id="uploadButton">Add Photo</button>
+            </div>
+        </div>
+
+        <div class="right-panel">
+            <div class="info-container">
+                <div class="button-group-row">
+                    <button id="addNewType">Add New Type</button>
+                    <button id="downloadJson">Download JSON</button>
+                </div>
+
+                <div class="frame-container">
+                    <div class="input-group">
+                        <label for="classIdInput">Enter ClassId (Separate with commas):</label>
+                        <input type="text" id="classIdInput" placeholder="example: 1,2,3">
+                    </div>
+
+                    <div class="reverse-container">
+                        <input type="checkbox" id="reverseCheckbox">
+                        <label for="reverseCheckbox">Reverse</label>
+                    </div>
+
+                    <button id="confirmROI">Confirm ROI</button>
+                </div>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+</body>
+
+</html>
