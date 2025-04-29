@@ -38,7 +38,7 @@
 ## 📦 Folder Structure
 
 ROI-Drawing-Tools/
-│
+
 
 ├── backend/                          
 │   └── server.js                    
@@ -46,7 +46,8 @@ ROI-Drawing-Tools/
 ├── public/                           
 │   ├── index.html                   
 │   ├── script.js                    
-│   └── style.css                    
+│   └── style.css
+
 │
 ├── project_bundle (2).zip            
 │
